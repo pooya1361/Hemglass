@@ -1,0 +1,6 @@
+@Hemglass.ETA.Api_HostAddress = http://localhost:5255
+
+GET {{Hemglass.ETA.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

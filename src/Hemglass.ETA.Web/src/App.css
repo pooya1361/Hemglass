@@ -1,0 +1,106 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: #1976d2;
+  color: white;
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controls input {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 120px;
+}
+
+.controls input:focus {
+  outline: 2px solid #90caf9;
+}
+
+.controls button {
+  padding: 8px 20px;
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.controls button:hover:not(:disabled) {
+  background: #0d47a1;
+}
+
+.controls button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.controls .refresh-btn {
+  background: #4caf50;
+}
+
+.controls .refresh-btn:hover:not(:disabled) {
+  background: #388e3c;
+}
+
+.position-info {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-left: auto;
+}
+
+.position-hint {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-left: auto;
+  font-style: italic;
+}
+
+.header-error {
+  background: #ffcdd2;
+  color: #c62828;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  border-left: 1px solid #e0e0e0;
+  overflow: hidden;
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(dotnet build:*)",
+      "Bash(mkdir:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet test:*)",
+      "WebFetch(domain:graphhopper.com)",
+      "WebFetch(domain:iceman-prod.azurewebsites.net)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+.stop-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.stop-list.loading,
+.stop-list.error,
+.stop-list.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  text-align: center;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.stop-list-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+
+.current-stop {
+  margin-bottom: 8px;
+}
+
+.current-stop .label {
+  color: #666;
+  margin-right: 8px;
+}
+
+.current-stop .value {
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.remaining .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.remaining .label {
+  color: #666;
+}
+
+.stops {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stop-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.stop-number {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1976d2;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.stop-details {
+  flex: 1;
+}
+
+.stop-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.stop-eta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.stop-eta .time {
+  font-weight: 600;
+  color: #333;
+}
+
+.stop-eta .minutes {
+  color: #666;
+}
+
+.stop-eta .travel {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.travel-time {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #999;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.stop-list-footer {
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+
+.stop-list-footer .label {
+  color: #666;
+  margin-right: 8px;
+}
+
+.stop-list-footer .value {
+  font-weight: 600;
+}

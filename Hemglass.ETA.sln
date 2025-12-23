@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C2CD552-FA58-4857-BBB5-50D21ADFE4BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hemglass.ETA.Api", "src\Hemglass.ETA.Api\Hemglass.ETA.Api.csproj", "{26DD2498-D08C-4747-AE36-16F3D45B7F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hemglass.ETA.Core", "src\Hemglass.ETA.Core\Hemglass.ETA.Core.csproj", "{03199A61-D7E2-4EF6-8C8A-7A572C4980D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hemglass.ETA.Infrastructure", "src\Hemglass.ETA.Infrastructure\Hemglass.ETA.Infrastructure.csproj", "{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6A4B0417-26BD-406A-B30C-23EDFBAC1A93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hemglass.ETA.Tests", "tests\Hemglass.ETA.Tests\Hemglass.ETA.Tests.csproj", "{15CEB87E-CAE2-4871-B09F-856440957C1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26DD2498-D08C-4747-AE36-16F3D45B7F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DD2498-D08C-4747-AE36-16F3D45B7F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DD2498-D08C-4747-AE36-16F3D45B7F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DD2498-D08C-4747-AE36-16F3D45B7F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03199A61-D7E2-4EF6-8C8A-7A572C4980D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03199A61-D7E2-4EF6-8C8A-7A572C4980D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03199A61-D7E2-4EF6-8C8A-7A572C4980D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03199A61-D7E2-4EF6-8C8A-7A572C4980D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CEB87E-CAE2-4871-B09F-856440957C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CEB87E-CAE2-4871-B09F-856440957C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CEB87E-CAE2-4871-B09F-856440957C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CEB87E-CAE2-4871-B09F-856440957C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{26DD2498-D08C-4747-AE36-16F3D45B7F01} = {6C2CD552-FA58-4857-BBB5-50D21ADFE4BE}
+		{03199A61-D7E2-4EF6-8C8A-7A572C4980D2} = {6C2CD552-FA58-4857-BBB5-50D21ADFE4BE}
+		{0A9BFBC5-0ECB-4A9D-8BA4-58BE7C4C7A1F} = {6C2CD552-FA58-4857-BBB5-50D21ADFE4BE}
+		{15CEB87E-CAE2-4871-B09F-856440957C1B} = {6A4B0417-26BD-406A-B30C-23EDFBAC1A93}
+	EndGlobalSection
+EndGlobal
