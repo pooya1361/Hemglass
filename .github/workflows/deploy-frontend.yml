@@ -1,4 +1,4 @@
-name: Deploy Frontend to Azure CDN
+name: Deploy Frontend to Azure Static Web Apps
 
 on:
   push:
@@ -8,62 +8,48 @@ on:
     paths:
       - 'src/Hemglass.ETA.Web/**'
       - '.github/workflows/deploy-frontend.yml'
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+      - master
+    paths:
+      - 'src/Hemglass.ETA.Web/**'
   workflow_dispatch:
 
 env:
-  NODE_VERSION: '20'
-  WORKING_DIRECTORY: 'src/Hemglass.ETA.Web'
+  APP_LOCATION: 'src/Hemglass.ETA.Web'
+  OUTPUT_LOCATION: 'dist'
 
 jobs:
   build-and-deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
+    name: Build and Deploy
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Build And Deploy
+        uses: Azure/static-web-apps-deploy@v1
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/package-lock.json
-
-      - name: Install dependencies
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: npm ci
-
-      - name: Build application
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: npm run build
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: 'upload'
+          app_location: ${{ env.APP_LOCATION }}
+          output_location: ${{ env.OUTPUT_LOCATION }}
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+  close-pull-request:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request
 
-      - name: Upload to Azure Blob Storage
-        uses: azure/cli@v2
+    steps:
+      - name: Close Pull Request
+        uses: Azure/static-web-apps-deploy@v1
         with:
-          inlineScript: |
-            az storage blob upload-batch \
-              --account-name ${{ vars.AZURE_STORAGE_ACCOUNT }} \
-              --destination '$web' \
-              --source ${{ env.WORKING_DIRECTORY }}/dist \
-              --overwrite true
-
-      - name: Purge Azure CDN endpoint
-        uses: azure/cli@v2
-        with:
-          inlineScript: |
-            az cdn endpoint purge \
-              --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} \
-              --profile-name ${{ vars.AZURE_CDN_PROFILE }} \
-              --name ${{ vars.AZURE_CDN_ENDPOINT }} \
-              --content-paths '/*'
-
-      - name: Logout from Azure
-        if: always()
-        run: az logout
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: 'close'
