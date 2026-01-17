@@ -39,6 +39,7 @@ jobs:
           action: 'upload'
           app_location: ${{ env.APP_LOCATION }}
           output_location: ${{ env.OUTPUT_LOCATION }}
+          skip_api_build: true
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
 
