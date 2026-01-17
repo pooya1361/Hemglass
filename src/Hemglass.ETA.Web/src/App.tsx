@@ -4,7 +4,7 @@ import { StopList } from './components/StopList';
 import type { EtaResult, TruckPosition, RouteInfo, StopMarker } from './types/eta';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:5255';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5255';
 
 function App() {
   const [stopId, setStopId] = useState<string>('');
