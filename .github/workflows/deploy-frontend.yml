@@ -40,8 +40,7 @@ jobs:
           app_location: ${{ env.APP_LOCATION }}
           output_location: ${{ env.OUTPUT_LOCATION }}
           skip_api_build: true
-        env:
-          VITE_API_URL: ${{ vars.VITE_API_URL }}
+          app_build_command: 'VITE_API_URL=${{ vars.VITE_API_URL }} npm run build'
 
   close-pull-request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
