@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+
+# Node modules (frontend)
+**/node_modules/
+**/dist/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Documentation
+docs/
+*.md
+
+# Tests (not needed in production image)
+tests/
+
+# Local settings
+**/appsettings.Development.json
+**/.env
+**/.env.*
+
+# GitHub
+.github/
+
+# BMad
+.bmad-core/

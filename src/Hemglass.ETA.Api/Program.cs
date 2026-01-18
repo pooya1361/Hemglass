@@ -6,6 +6,9 @@ using Hemglass.ETA.Infrastructure.Iceman;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Application Insights telemetry
+builder.Services.AddApplicationInsightsTelemetry();
+
 // swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,7 +20,10 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:5173") // Vite dev server
+        policy.WithOrigins(
+                "http://localhost:5173", // Vite dev server
+                "https://victorious-meadow-099b28103.4.azurestaticapps.net" // Azure Static Web Apps
+              )
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
